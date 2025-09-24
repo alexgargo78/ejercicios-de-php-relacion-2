@@ -1,0 +1,103 @@
+/* Archivo: /css/style.css */
+body {
+  background: url(../img/bgblanco.png) repeat;
+  text-align: justify;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 14px;
+  color: #757E82;
+}
+
+#container {
+  margin: 0 auto;
+  width: 900px;
+  background: #fff;
+  border: solid 1px;
+}
+
+#header {
+  background: url(../img/bgblue2.png) repeat;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  position: relative;
+}
+
+#header h1 {
+
+  font-size: 24px;
+  margin: 0.6em;
+}
+
+#header h2 {
+
+  font-size: 20px;
+  margin: 0.2em;
+}
+
+#content {
+  background: url(../img/bglightblue.png) repeat;
+  clear: left;
+  padding: 20px 0;
+}
+
+#content h2 {
+  color: #000;
+  font-size: 160%;
+  margin: 0 0 .5em;
+  text-align: center;   /* 👈 fuerza el centrado */
+}
+
+
+ol {
+  background: url(../img/bglightblue.png) repeat;
+}
+
+li {
+  padding: 18px;
+}
+
+a {
+  color: #429;
+  text-decoration: none;
+}
+
+table,
+th,
+td {
+  margin: auto;
+  border: 0;
+  border-collapse: collapse;
+  padding: 4px;
+  text-align: left;
+}
+
+#footer {
+  color: white;
+  background: url(../img/bgblue2.png) repeat;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+}
+
+input {
+  margin: 6px;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.foto-perfil {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  object-fit: cover;
+}
