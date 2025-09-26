@@ -46,7 +46,7 @@ if ($resultado === 0) {
   $dinero  = $dinero * 2;
   $estado  = "gana_doble";
   $mensaje = "🎉 ¡Has ganado! Ahora tienes " . number_format($dinero, 0, ',', '.') . " €.";
-  // Usa una imagen existente (no tienes gato.png)
+  // Usa una imagen existente
   $imagen  = "../img/gatochinosuerte.png";
 }
 
@@ -83,7 +83,7 @@ $_SESSION['dinero'] = $dinero;
                 <button type="submit">Sigo jugando</button>
             </form>
             <br>
-            <a href="resultadofinal.php"><button type="button"><h2></h2>Me planto <?= $dinero ?> €</button></a>
+            <a href="resultadofinal.php"><button type="button">Me planto <?= $dinero ?> €</button></a>
             <?php endif; ?>
         </div>
 
