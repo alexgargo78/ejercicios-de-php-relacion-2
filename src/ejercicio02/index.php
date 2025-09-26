@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="default.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -26,11 +26,19 @@
                 <input type="submit" value="Aceptar">
             </form>
 
+            <p><a href="../index.php">🏠 página principal</a></p>
         </div>
 
+
+
+
+
         <div id="footer">
-            © Luis José Sánchez González
+            © 2025 Alejandro García Gómez
         </div>
+    </div>
+
+
     </div>
 </body>
 
