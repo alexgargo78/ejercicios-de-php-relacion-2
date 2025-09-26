@@ -1,40 +1,56 @@
 <?php
+// src/ejercicio02/resultado.php
 session_start();
 
-// Si es la primera vez, guardamos el dinero inicial
+/* 1) Dinero inicial (primer acceso desde index.php) */
 if (isset($_POST['dinero'])) {
   $_SESSION['dinero'] = (int) $_POST['dinero'];
 }
 
-$dinero = isset($_SESSION['dinero']) ? $_SESSION['dinero'] : 0;
-
-// Si no hay saldo, volvemos al inicio
+/* 2) Saldo actual */
+$dinero = isset($_SESSION['dinero']) ? (int) $_SESSION['dinero'] : 0;
 if ($dinero <= 0) {
-  header("Location: ejercicio2/index.php");
+  header("Location: index.php");
   exit;
 }
 
-// Generar resultado aleatorio: 0 = pierde todo, 1 = pierde mitad, 2 = gana doble
+/* 3) Resultado aleatorio:
+      0 = pierde todo, 1 = pierde la mitad, 2 = gana el doble */
 $resultado = rand(0, 2);
+$estado = "";
+$mensaje = "";
+$imagen  = "";
 
-if ($resultado == 0) {
+if ($resultado === 0) {
+  // Pierde todo
   $dinero = 0;
+  $estado  = "pierde_todo";
   $mensaje = "💀 Mala suerte... ¡Has perdido todo!";
   $imagen  = "../img/calavera.png";
-  $estado  = "pierde_todo";
-} elseif ($resultado == 1) {
-  $dinero = floor($dinero / 2);
-  $mensaje = "❌ Has perdido la mitad. Ahora tienes $dinero €.";
-  $imagen  = "../img/mediolimon.png";
-  $estado  = "pierde_mitad";
+} elseif ($resultado === 1) {
+  // Pierde la mitad
+  $dinero = (int) floor($dinero / 2);
+
+  if ($dinero <= 0) {
+    // Si al perder la mitad se queda en 0, es equivalente a perder todo
+    $estado  = "pierde_todo";
+    $mensaje = "💀 Mala suerte... ¡Has perdido todo!";
+    $imagen  = "../img/calavera.png";
+  } else {
+    $estado  = "pierde_mitad";
+    $mensaje = "❌ Has perdido la mitad. Ahora tienes " . number_format($dinero, 0, ',', '.') . " €.";
+    $imagen  = "../img/mediolimon.png";
+  }
 } else {
-  $dinero = $dinero * 2;
-  $mensaje = "🎉 ¡Has ganado! Ahora tienes $dinero €.";
-  $imagen  = "../img/gatochinosuerte.png";
+  // Gana el doble
+  $dinero  = $dinero * 2;
   $estado  = "gana_doble";
+  $mensaje = "🎉 ¡Has ganado! Ahora tienes " . number_format($dinero, 0, ',', '.') . " €.";
+  // Usa una imagen existente (no tienes gato.png)
+  $imagen  = "../img/gatochinosuerte.png";
 }
 
-// Guardamos nuevo saldo
+/* 4) Guardar nuevo saldo */
 $_SESSION['dinero'] = $dinero;
 ?>
 <!DOCTYPE html>
@@ -67,7 +83,7 @@ $_SESSION['dinero'] = $dinero;
                 <button type="submit">Sigo jugando</button>
             </form>
             <br>
-            <a href="../index.php"><button type="button"><h2></h2>Me planto <?= $dinero ?> €</button></a>
+            <a href="resultadofinal.php"><button type="button"><h2></h2>Me planto <?= $dinero ?> €</button></a>
             <?php endif; ?>
         </div>
 
