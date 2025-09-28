@@ -34,18 +34,18 @@ if ($resultado === 0) {
   if ($dinero <= 0) {
     // Si al perder la mitad se queda en 0, es equivalente a perder todo
     $estado  = "pierde_todo";
-    $mensaje = "💀 Mala suerte... ¡Has perdido todo!";
+    $mensaje = "💀 Mala suerte... <br><br>¡Has perdido todo!";
     $imagen  = "../img/calavera.png";
   } else {
     $estado  = "pierde_mitad";
-    $mensaje = "❌ Has perdido la mitad. Ahora tienes " . number_format($dinero, 0, ',', '.') . " €.";
+    $mensaje = "❌ Has perdido la mitad.<br><br> Ahora tienes " . number_format($dinero, 0, ',', '.') . " €.";
     $imagen  = "../img/mediolimon.png";
   }
 } else {
   // Gana el doble
   $dinero  = $dinero * 2;
   $estado  = "gana_doble";
-  $mensaje = "🎉 ¡Has ganado! Ahora tienes " . number_format($dinero, 0, ',', '.') . " €.";
+  $mensaje = "🎉 ¡Has doblado el dinero!<br><br> Ahora tienes " . number_format($dinero, 0, ',', '.') . " €.";
   // Usa una imagen existente
   $imagen  = "../img/gatochinosuerte.png";
 }
@@ -72,7 +72,7 @@ $_SESSION['dinero'] = $dinero;
         <div id="content" class="center">
             <h2>Resultado de la jugada</h2>
             <img src="<?= $imagen ?>" width="200"><br><br>
-            <p><?= $mensaje ?></p>
+            <h2><?= $mensaje ?></h2>
 
             <?php if ($estado == "pierde_todo"): ?>
             <h2>Te has quedado sin dinero.</h2>
@@ -83,7 +83,7 @@ $_SESSION['dinero'] = $dinero;
                 <button type="submit">Sigo jugando</button>
             </form>
             <br>
-            <a href="resultadofinal.php"><button type="button">Me planto <?= $dinero ?> €</button></a>
+            <a href="resultadofinal.php"><button type="button">Me planto </button></a>
             <?php endif; ?>
         </div>
 
