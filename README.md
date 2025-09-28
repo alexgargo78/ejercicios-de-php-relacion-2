@@ -78,17 +78,17 @@ Un pequeño juego de azar en el que el jugador apuesta una cantidad inicial y en
 
         Perder todo el dinero 💀
 
-        <img width="734" height="425" alt="image" src="https://github.com/user-attachments/assets/7619ddf8-be4f-4573-b21b-908a52f40f0e" />
+<img width="734" height="425" alt="image" src="https://github.com/user-attachments/assets/7619ddf8-be4f-4573-b21b-908a52f40f0e" />
 
 
         Perder la mitad del dinero 🍋
 
-        <img width="736" height="483" alt="image" src="https://github.com/user-attachments/assets/6619d2b8-4ee9-48ba-9532-cb3e6d29cee1" />
+<img width="736" height="483" alt="image" src="https://github.com/user-attachments/assets/6619d2b8-4ee9-48ba-9532-cb3e6d29cee1" />
 
 
         Ganar el doble del dinero 🐱
 
-        <img width="737" height="573" alt="image" src="https://github.com/user-attachments/assets/09b97a33-61f2-4c01-ac80-7547057c0c95" />
+<img width="737" height="573" alt="image" src="https://github.com/user-attachments/assets/09b97a33-61f2-4c01-ac80-7547057c0c95" />
 
 
 Después de cada jugada, si aún le queda dinero, el jugador puede:
@@ -97,7 +97,7 @@ Después de cada jugada, si aún le queda dinero, el jugador puede:
 
         Plantarse → pasa a resultadofinal.php, donde se muestra el dinero final conseguido.
 
-        <img width="740" height="305" alt="image" src="https://github.com/user-attachments/assets/1dfa4035-5de1-4b57-9ea0-2d2a4c9c3f5f" />
+<img width="740" height="305" alt="image" src="https://github.com/user-attachments/assets/1dfa4035-5de1-4b57-9ea0-2d2a4c9c3f5f" />
 
 
 ⚙️ Funcionamiento
